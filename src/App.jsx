@@ -7,18 +7,32 @@ import "./mystyle.css"
 
 
 export default function App() {
-    let [x, setx]= useState(0) 
+    let [marks, setMarks]= useState([54,63,48,49,51])
     
-    const increment=()=>{
-      setx(x+1);
+    const increment=(index)=>{
+      const copyMarks=[...marks];
+      copyMarks[index]++;
+      setMarks=copyMarks(i);
+
+    }
+    const decrement=(index)=>{
+      const copyMarks=[...marks];
+      copyMarks[index]--;
+      setMarks=copyMarks(i);
     }
   return(
-    <>
-    <h1>Basic example</h1>
-    <h2>counter={x}</h2>
-    <button onClick={increment}>Click plz</button>
-    
-    </>
+    <div className='container my-5'>
+      {
+      marks.map((m, i) =>(
+        <div>
+        <button onClick={()=>increment(i)}>+</button>
+        {marks} : {marks >= 50? "pass" : "fail"}
+        <button onClick={()=>decrement(i)}>-</button>
+        </div>
+
+      ))}
+      
+    </div>
   )
    
    }
