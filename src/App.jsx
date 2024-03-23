@@ -7,35 +7,40 @@ import "./mystyle.css"
 
 
 export default function App() {
-    let [marks, setMarks]= useState([54,63,48,49,51])
+    let [grades, setGrades]= useState([
+      {id:1, marks:49, course:"C++"},
+      {id:2, marks:52, course:"Dart"},
+      {id:3, marks:48, course:"Python"},
+      {id:4, marks:53, course:"Angular"},
+    ])
     
     const increment=(index)=>{
-      const copyMarks=[...marks];
-      copyMarks[index]++;
-      setMarks=copyMarks(i);
+      // const copyGrades=[...grades];
+      // copyGrades[index]++;
+      // setGrades(copyGrades);
 
     }
     const decrement=(index)=>{
-      const copyMarks=[...marks];
-      copyMarks[index]--;
-      setMarks=copyMarks(i);
+      // const copyMarks=[...marks];
+      // copyMarks[index]--;
+      // setMarks(copyMarks);
     }
   return(
     <div className="container my-5">
       {
-      marks.map((m, i) =>(
-        <div>
+      grades.map((g, i) =>(
+        <div key={g.id}>
         <button onClick={() =>increment(i)}>+</button>
-        {m} : {m >= 50? "pass" : "fail"}
+       Your Marks are {g.marks} in {g.course} 
         <button onClick={()=>decrement(i)}>-</button>
-        </div>
-
-      ))}
-      
+        </div> 
+))}
     </div>
   )
+}
+  
    
-   }
+   
    
  
 
