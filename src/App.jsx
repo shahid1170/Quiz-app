@@ -15,15 +15,15 @@ export default function App() {
     ])
     
     const increment=(index)=>{
-      // const copyGrades=[...grades];
-      // copyGrades[index]++;
-      // setGrades(copyGrades);
+      const copyGrades=[...grades];
+      copyGrades[index].marks++;
+      setGrades(copyGrades);
 
     }
     const decrement=(index)=>{
-      // const copyMarks=[...marks];
-      // copyMarks[index]--;
-      // setMarks(copyMarks);
+      const copyGrades=[...grades];
+      copyGrades[index].marks--;
+      setGrades(copyGrades);
     }
   return(
     <div className="container my-5">
