@@ -21,12 +21,12 @@ export default function App() {
       setMarks=copyMarks(i);
     }
   return(
-    <div className='container my-5'>
+    <div className="container my-5">
       {
       marks.map((m, i) =>(
         <div>
-        <button onClick={()=>increment(i)}>+</button>
-        {marks} : {marks >= 50? "pass" : "fail"}
+        <button onClick={() =>increment(i)}>+</button>
+        {m} : {m >= 50? "pass" : "fail"}
         <button onClick={()=>decrement(i)}>-</button>
         </div>
 
