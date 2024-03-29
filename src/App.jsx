@@ -8,11 +8,11 @@ import "./mystyle.css"
 
 export default function App() {
   let [grades, setGrades] = useState([
-    { id: 1, marks: 49, course: "C++" },
-    { id: 2, marks: 52, course: "Dart" },
-    { id: 3, marks: 48, course: "Python" },
-    { id: 4, marks: 53, course: "Angular" },
-    { id: 5, marks: 54, course: "Space" },
+    { id: 1, marks: 84, course: "C++" },
+    { id: 2, marks: 94, course: "Dart" },
+    { id: 3, marks: 90, course: "Python" },
+    { id: 4, marks: 88, course: "Angular" },
+    { id: 5, marks: 90, course: "Space" },
   ])
 
   const increment = (index) => {
@@ -32,9 +32,9 @@ export default function App() {
 
   }
   const onSelect = (id) => {
-    copyGrades=[...grades]
+    const copyGrades=[...grades];
     const course=copyGrades.find(g => g.id === id);
-    course.selected=ture;
+    course.selected=true;
     setGrades(copyGrades);
   }
   return (
@@ -55,6 +55,7 @@ export default function App() {
           <div key={g.id}>
             <button onClick={() => increment(i)}>+</button>
             Your Marks are {g.marks} in {g.course}
+            Your %age is {g.marks} % in {g.course}
             <button onClick={() => decrement(i)}>-</button>
             
             
