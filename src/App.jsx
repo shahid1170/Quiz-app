@@ -54,8 +54,8 @@ export default function App() {
         {grades.filter(g=>g.selected).map((g, i) => (
           <div key={g.id}>
             <button onClick={() => increment(i)}>+</button>
-            Your Marks are {g.marks} in {g.course}
-            Your %age is {g.marks} % in {g.course}
+            Your Marks are {g.marks} in {g.course} 
+            {' '}Your %age is {g.marks} % in {g.course}
             <button onClick={() => decrement(i)}>-</button>
             
             
