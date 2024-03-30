@@ -9,7 +9,7 @@ import questions from "./mylib/data.json"
 
 export default function App() {
 
-const [allQues, setallQues]=useState(questions);
+const [allQues, setallQues]= useState(questions);
 
 const onSelect=(qid, op)=>{
   // console.log(q.id, op)
@@ -27,14 +27,12 @@ const onSelect=(qid, op)=>{
           <div className="card-header">{q.statement}</div>
           <ul className="list-group list-group-flush">
             {q.options.map((op) =>
-
               <li
                 key={op}
                 className="list-group-item" onClick={() =>onSelect(q.id, op)}>{op}</li>
             )}
 
-            <li className="list-group-item">A second item</li>
-            <li className="list-group-item">A third item</li>
+            
           </ul>
         </div>
       ))}
