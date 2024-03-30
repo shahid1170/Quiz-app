@@ -9,16 +9,28 @@ import questions from "./mylib/data.json"
 
 export default function App() {
 
-const [allQues, setallQues]= useState(questions);
+const [allQues, setAllQues]= useState(questions);
 
 const onSelect=(qid, op)=>{
-  // console.log(q.id, op)
+  console.log(qid, op)
   const copyQues=[...allQues];
   const ques=copyQues.find(q=>q.id===qid)
   ques.selectedOption=op;
-  setallQues(copyQues);
+  setAllQues(copyQues);
   console.log(allQues);
+}
+  
+const getStyle=(q,op)=>{
+  let style="list-group-item"
+  if(q.selectedOption){
+    if(q.answer===q.selectedOption)
+    style=style + "bg-success"
+  else
+    style=style + "bg-danger"
+  }
+  return style;
 
+}
   return (
 
     <div className='container my-3'>
@@ -29,7 +41,7 @@ const onSelect=(qid, op)=>{
             {q.options.map((op) =>
               <li
                 key={op}
-                className="list-group-item" onClick={() =>onSelect(q.id, op)}>{op}</li>
+                className={getStyle} onClick={() =>onSelect(q.id, op)}>{op}</li>
             )}
 
             
@@ -40,7 +52,7 @@ const onSelect=(qid, op)=>{
 
     </div>
   )
-}}
+}
 
 
 
