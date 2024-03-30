@@ -1,0 +1,30 @@
+[
+    {
+        "id":1,
+        "statement": "1. What is name",
+        "options": ["Shahid", "Nawaz", "Anwar", "Zia"],
+        "answer": "Zia"
+
+    },
+    {
+        "id":2,
+        "statement": "2. What is name",
+        "options": ["Shahid", "Nawaz", "Anwar", "Zia"],
+        "answer": "Nawaz"
+
+    },
+    {
+        "id":3,
+        "statement": "3. What is name",
+        "options": ["Shahid", "Nawaz", "Anwar", "Zia"],
+        "answer": "Shahid"
+
+    },
+    {
+        "id":4,
+        "statement": "What is name",
+        "options": ["Shahid", "Nawaz", "Anwar", "Zia"],
+        "answer": "Anwar"
+
+    }
+]
