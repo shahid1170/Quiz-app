@@ -9,20 +9,40 @@ import questions from "./mylib/data.json"
 
 export default function App() {
 
+const [allQues, setallQues]=useState(questions);
+
+const onSelect=(qid, op)=>{
+  // console.log(q.id, op)
+  const copyQues=[...allQues];
+  const ques=copyQues.find(q=>q.id===qid)
+  ques.selectedOption=op;
+  setallQues(copyQues);
+  console.log(allQues);
+
   return (
+
     <div className='container my-3'>
-      <div className="card">
-        <div className="card-header">Featured</div>
-        <ul className="list-group list-group-flush">
-          <li className="list-group-item">An item</li>
-          <li className="list-group-item">A second item</li>
-          <li className="list-group-item">A third item</li>
-        </ul>
-      </div>
+      {allQues.map((q) => (
+        <div className="card my-2" key={q.id}>
+          <div className="card-header">{q.statement}</div>
+          <ul className="list-group list-group-flush">
+            {q.options.map((op) =>
+
+              <li
+                key={op}
+                className="list-group-item" onClick={() =>onSelect(q.id, op)}>{op}</li>
+            )}
+
+            <li className="list-group-item">A second item</li>
+            <li className="list-group-item">A third item</li>
+          </ul>
+        </div>
+      ))}
+
 
     </div>
   )
-}
+}}
 
 
 
