@@ -23,14 +23,18 @@ const onSelect=(qid, op)=>{
 const getStyle=(q,op)=>{
   let style="list-group-item"
   if(q.selectedOption){
-    if(q.answer===q.selectedOption)
+    if(op===q.selectedOption && op===q.answer)
+    
     style=style + "bg-success"
   else
     style=style + "bg-danger"
+    return style;
   }
-  return style;
+  
+  }
+  
 
-}
+
   return (
 
     <div className='container my-3'>
@@ -41,7 +45,7 @@ const getStyle=(q,op)=>{
             {q.options.map((op) =>
               <li
                 key={op}
-                className={getStyle} onClick={() =>onSelect(q.id, op)}>{op}</li>
+                className={getStyle()} onClick={() =>onSelect(q.id, op)}>{op}</li>
             )}
 
             
