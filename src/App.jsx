@@ -21,15 +21,17 @@ const onSelect=(qid, op)=>{
 }
   
 const getStyle=(q,op)=>{
-  let style="list-group-item"
-  if(q.selectedOption){
-    if(op===q.selectedOption && op===q.answer)
+  const style="list-group-item"
+  if(op !==q.selectedOption)
+  return style;
+
+    if(op===q.answer)
     
-    style=style + "bg-success"
+    return style=style + "bg-success"
   else
     style=style + "bg-danger"
     return style;
-  }
+  
   
   }
   
