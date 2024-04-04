@@ -15,22 +15,22 @@ const onSelect=(qid, op)=>{
   console.log(qid, op)
   const copyQues=[...allQues];
   const ques=copyQues.find(q=>q.id===qid)
-  ques.selectedOption=op;
+  ques.selectedOption=op;npm
   setAllQues(copyQues);
   console.log(allQues);
 }
   
 const getStyle=(q,op)=>{
-  const style="list-group-item"
+  const style="list-group-item";
   if(op !==q.selectedOption)
   return style;
 
     if(op===q.answer)
     
-    return style=style + "bg-success"
+    return style + "bg-success"
   else
-    style=style + "bg-danger"
-    return style;
+    return style + "bg-danger"
+    
   
   
   }
